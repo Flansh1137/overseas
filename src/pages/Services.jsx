@@ -2,44 +2,60 @@ import React from 'react';
 
 const services = [
   {
-    title: '🎓 Counseling & Profile Evaluation',
-    desc: 'We assess your academic background, goals, and strengths to guide you with personalized one-on-one sessions.',
+    icon: '🎓',
+    title: 'Counseling & Profile Evaluation',
+    desc: 'Personalized 1-on-1 sessions to assess your academic strengths and guide your goals.',
   },
   {
-    title: '🌍 Country & University Selection',
-    desc: 'We shortlist the best destinations and institutions based on your goals, budget, and career vision.',
+    icon: '🌍',
+    title: 'Country & University Selection',
+    desc: 'Get curated lists of institutions based on budget, goals, and career prospects.',
   },
   {
-    title: '📄 Application & Admission Help',
-    desc: 'We assist with SOP, LOR, resumes, and application portals to make sure you stand out.',
+    icon: '📄',
+    title: 'Application & Admission Help',
+    desc: 'Stand out with expert help on SOPs, LORs, resumes, and application portals.',
   },
   {
-    title: '🛂 Visa Filing & Documentation',
-    desc: 'Get full support for forms, documents, interviews, and embassy requirements — stress-free.',
+    icon: '🛂',
+    title: 'Visa Filing & Documentation',
+    desc: 'Full guidance through visa forms, embassy procedures, and interviews.',
   },
   {
-    title: '💰 Loan Assistance',
-    desc: 'Connect with financial institutions to secure education loans — with minimal interest and quick approvals.',
+    icon: '💰',
+    title: 'Loan Assistance',
+    desc: 'Secure quick approvals and low-interest loans via trusted financial partners.',
   },
   {
-    title: '💼 Internship Support',
-    desc: 'We help you find internships and projects globally, both for tech and non-tech backgrounds.',
+    icon: '💼',
+    title: 'Internship Support',
+    desc: 'Find global internship opportunities tailored to tech & non-tech profiles.',
   },
 ];
 
 const Services = () => {
   return (
-    <div className="px-4 py-12 md:px-20 bg-softWhite">
-      <h1 className="text-4xl font-bold text-primary text-center mb-10">Our Services</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((service, i) => (
-          <div key={i} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-            <h2 className="text-xl font-semibold text-darkPurple mb-2">{service.title}</h2>
-            <p className="text-base text-baseGray leading-relaxed">{service.desc}</p>
+    <section className="bg-gradient-to-br from-[#f9f9fc] to-[#f3f3fa] py-16 px-6 md:px-20">
+      <div className="text-center mb-14">
+        <h2 className="text-5xl font-extrabold text-purple-800 mb-4">Our Services</h2>
+        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          Everything you need to plan, apply, and succeed in your study abroad journey.
+        </p>
+      </div>
+
+      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        {services.map((service, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
+          >
+            <div className="text-4xl mb-4">{service.icon}</div>
+            <h3 className="text-2xl font-semibold text-darkPurple mb-3">{service.title}</h3>
+            <p className="text-gray-600 text-base leading-relaxed">{service.desc}</p>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
