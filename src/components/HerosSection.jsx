@@ -6,7 +6,7 @@ import AbroadStudyFeatures from "./AbroadStudy";
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-[#9B59B6] min-h-screen px-20">
+    <section className="relative overflow-hidden bg-[#9B59B6] min-h-screen px-20 pt-12 sm:pt-0">
       {/* Reduced padding from px-[8rem] (~128px) to px-20 (80px) */}
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
@@ -20,7 +20,7 @@ const HeroSection = () => {
         />
       </div>
 
-      <div className="container-padding relative z-10 pt-6">
+      <div className="container-padding relative z-10">
         {" "}
         {/* Reduced pt-8 to pt-6 */}
         {/* Top Hero Content (Flex instead of Grid) */}
@@ -85,15 +85,15 @@ const HeroSection = () => {
           </div>
 
           {/* Right Section */}
-          <div className="w-full lg:w-1/2 animate-slide-in-right relative">
+          <div className="-z-20 w-full lg:w-1/2 animate-slide-in-right relative">
             <img
               src={studentImage}
               alt="Happy student"
-              className="w-[90rem] absolute top-[-16rem]"
+              className="w-[90rem] relative top-[1rem] "
             />{" "}
             {/* Reduced width from 102rem to 90rem */}
             {/* Floating Stats */}
-            <div className="absolute top-8 right-8 bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg animate-bounce">
+            <div className="absolute top-4 sm:top-20 sm:right-12 -right-10 bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg animate-bounce">
               <div className="flex items-center space-x-3">
                 <div className="w-7 h-7 bg-teal-100 rounded-lg flex items-center justify-center">
                   <BookOpen className="w-4 h-4 text-teal-600" />
@@ -104,19 +104,19 @@ const HeroSection = () => {
                 </div>
               </div>
             </div>
-            <div className="absolute top-32 left-8 bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg animate-pulse">
-              <div className="flex items-center space-x-3">
+            <div className="absolute top-20  sm:top-44  sm:left-8 -left-12 bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg animate-pulse">
+              <div className=" flex items-center space-x-3">
                 <div className="w-7 h-7 bg-blue-100 rounded-lg flex items-center justify-center">
                   <Users className="w-4 h-4 text-blue-600" />
                 </div>
-                <div>
-                  <p className="text-xs text-gray-600">Total Instructors</p>
+                <div className="">
+                  <p className="text-xs  text-gray-600">Total Instructors</p>
                   <p className="text-lg font-bold text-gray-900">400+</p>
                 </div>
               </div>
             </div>
             <div
-              className="absolute bottom-32 right-4 bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg animate-bounce"
+              className="absolute bottom-4 sm:bottom-32 -right-10 sm:right-4 bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg animate-bounce"
               style={{ animationDelay: "0.5s" }}
             >
               <div className="flex items-center space-x-3">

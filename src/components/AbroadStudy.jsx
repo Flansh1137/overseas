@@ -26,7 +26,7 @@ const AbroadStudyFeatures = () => {
   ];
 
   return (
-    <div className="bg-[#6A2C8B]  rounded-3xl shadow-2xl p-8 mt-16 mb-8" >
+    <div className="bg-[#6A2C8B]  rounded-3xl shadow-2xl p-8 mb-8" >
       <div className="grid md:grid-cols-4 gap-6">
         {features.map(({ icon: Icon, title, desc }, index) => (
           <div
