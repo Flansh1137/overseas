@@ -1,6 +1,6 @@
 import React from "react";
 import { Star, BookOpen, Users, GraduationCap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import studentImage from "../assets/image.png";
 import AbroadStudyFeatures from "./AbroadStudy";
 
