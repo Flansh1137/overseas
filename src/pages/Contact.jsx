@@ -499,7 +499,7 @@ export default function Contact() {
 
    
       {/* Emergency Support Banner */}
-      <section className="py-12 bg-gradient-to-r from-red-500 to-red-600 text-white">
+      <section className="py-12 bg-darkPurple from-red-500 to-red-600 text-white">
         <div className="container-padding text-center">
           <h3 className="text-2xl font-bold mb-4">
             Need Immediate Assistance?
@@ -511,7 +511,7 @@ export default function Contact() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-white text-red-600 hover:bg-gray-100 font-semibold px-8 py-4"
+              className="bg-white text-darkPurple hover:bg-gray-100 font-semibold px-8 py-4"
             >
               <Phone className="w-5 h-5 mr-2" />
               Call Emergency Line
