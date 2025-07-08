@@ -3,89 +3,50 @@ import { Star, BookOpen, Users, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import studentImage from "../assets/image.png";
 import AbroadStudyFeatures from "./AbroadStudy";
+import { FaAdjust, FaArrowRight } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-[#9B59B6] min-h-screen px-20 pt-12 sm:pt-0">
-      {/* Reduced padding from px-[8rem] (~128px) to px-20 (80px) */}
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 20% 80%, rgba(255,255,255,0.2) 0%, transparent 50%),
-                              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.2) 0%, transparent 50%),
-                              radial-gradient(circle at 40% 40%, rgba(255,255,255,0.2) 0%, transparent 50%)`,
-          }}
-        />
-      </div>
 
-      <div className="container-padding relative z-10">
-        {" "}
-        {/* Reduced pt-8 to pt-6 */}
-        {/* Top Hero Content (Flex instead of Grid) */}
-        <div className="flex flex-col lg:flex-row gap-12 items-center min-h-[calc(100vh-180px)]">
+<section
+  className="relative overflow-hidden min-h-screen px-20 pt-12 sm:pt-0 "
+  
+>
+
+      <div className="container-padding relative z-10 ">
+        <div className="flex flex-col lg:flex-row gap-12 items-center min-h-[calc(100vh-180px)] ">
           {/* Left Section */}
-          <div className="w-full lg:w-1/2 animate-slide-in-left text-white">
-            <p className="text-white/90 mb-3 text-base">
-              Your Online Learning Partner
-            </p>{" "}
+          <div className="w-full   animate-slide-in-left text-black">
+          
             {/* reduced text-lg to text-base, mb-4 to mb-3 */}
-            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5">
-              {" "}
-              {/* reduced from 5xl/6xl to 4xl/5xl */}A Leading And Trusted
-              Education Consultancy
+
+          
+
+
+            <h1 className="text-4xl  font-plein sm:w-3/4 lg:text-6xl font-bold leading-tight mb-6">
+          We Help to <span className="text-darkPurple">Build </span>
+              Your Dream
             </h1>
-            <p className="text-white/90 text-base mb-6 leading-relaxed max-w-lg">
-              {" "}
-              {/* text-lg to base, mb-8 to mb-6 */}
-              Access high-quality courses anytime, anywhere, and take control of
-              your learning journey with ease.
+            <p className="text-black text-base mb-6 leading-relaxed ">
+              
+            Our team of experts is dedicated to guiding you through every step of the process, ensuring a smooth and successful journey towards your academic goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <Button
                 size="lg"
-                className="hover:bg-white bg-purple-900 hover:text-purple-500 text-white font-semibold text-lg px-6 py-3 rounded-xl transition-colors duration-300"
-              >
-                Get Started Now
-              </Button>
-
-              <Button
-                size="lg"
-                className="bg-white hover:bg-purple-900 text-purple-500 hover:text-white font-semibold text-lg px-6 py-3 rounded-xl transition-colors duration-300"
+                className="hover:bg-white bg-purple-900 hover:text-purple-500 text-white font-semibold text-lg px-[3rem] py-[1.8rem] rounded-xl transition-colors duration-300,"
               >
                 Book Appointment
+<FaArrowRight className="ml-4"/>
               </Button>
+
+           
             </div>
-            {/* Student Review Box */}
-            <div className="flex items-center space-x-4 bg-white/10 backdrop-blur-sm rounded-xl p-3 max-w-sm">
-              <div className="flex -space-x-2">
-                <div className="w-9 h-9 bg-gray-300 rounded-full border-2 border-white flex items-center justify-center text-sm">
-                  👨🏻
-                </div>
-                <div className="w-9 h-9 bg-gray-300 rounded-full border-2 border-white flex items-center justify-center text-sm">
-                  👩🏽
-                </div>
-                <div className="w-9 h-9 bg-teal-700 text-white font-bold rounded-full border-2 border-white flex items-center justify-center text-sm">
-                  +
-                </div>
-              </div>
-              <div>
-                <div className="flex items-center space-x-1 mb-1">
-                  <span className="text-xl font-bold text-white">4.8</span>{" "}
-                  {/* reduced from 2xl */}
-                  <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                </div>
-                <p className="text-white/80 text-xs">Student Review</p>
-                <p className="text-white/60 text-xs">
-                  Based on more than 10,000 feedbacks
-                </p>
-              </div>
-            </div>
+          
           </div>
 
           {/* Right Section */}
-          <div className="-z-20 w-full lg:w-1/2 animate-slide-in-right relative">
+          <div className="-z-20 w-full lg:w-10/12 animate-slide-in-right relative">
             <img
               src={studentImage}
               alt="Happy student"
@@ -93,7 +54,7 @@ const HeroSection = () => {
             />{" "}
             {/* Reduced width from 102rem to 90rem */}
             {/* Floating Stats */}
-            <div className="absolute top-4 sm:top-20 sm:right-12 -right-10 bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg animate-bounce">
+            <div className="absolute top-4 sm:top-20 sm:right-12 -right-10 bg-white/90  border-[1px] border-darkPurple rounded-xl p-3 shadow-lg animate-bounce">
               <div className="flex items-center space-x-3">
                 <div className="w-7 h-7 bg-teal-100 rounded-lg flex items-center justify-center">
                   <BookOpen className="w-4 h-4 text-teal-600" />
@@ -104,7 +65,7 @@ const HeroSection = () => {
                 </div>
               </div>
             </div>
-            <div className="absolute top-20  sm:top-44  sm:left-8 -left-12 bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg animate-pulse">
+            <div className="absolute top-20  sm:top-44  sm:left-8 -left-12 bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg animate-bounce border-[1px] border-darkPurple ">
               <div className=" flex items-center space-x-3">
                 <div className="w-7 h-7 bg-blue-100 rounded-lg flex items-center justify-center">
                   <Users className="w-4 h-4 text-blue-600" />
@@ -116,10 +77,10 @@ const HeroSection = () => {
               </div>
             </div>
             <div
-              className="absolute bottom-4 sm:bottom-32 -right-10 sm:right-4 bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg animate-bounce"
+              className="absolute bottom-4 sm:bottom-32 -right-10 sm:right-4 bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg animate-bounce "
               style={{ animationDelay: "0.5s" }}
             >
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3 ">
                 <div className="w-7 h-7 bg-green-100 rounded-lg flex items-center justify-center">
                   <GraduationCap className="w-4 h-4 text-green-600" />
                 </div>

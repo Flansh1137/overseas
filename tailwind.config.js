@@ -6,7 +6,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-       colors: {
+      colors: {
         primary: '#9B59B6',
         darkPurple: '#6A2C8B',
         lightLavender: '#D8B4FF',
@@ -15,8 +15,11 @@ module.exports = {
         lightGray: '#F5F5F5',
       },
       backgroundImage: {
-      'gradient-soft': 'linear-gradient(to bottom right, #FDEFF9, #ECF0FF)',
-    },
+        'gradient-soft': 'linear-gradient(to bottom right, #FDEFF9, #ECF0FF)',
+      },
+      fontFamily: {
+        plein: ['Plein', 'sans-serif'],
+      },
     },
   },
   plugins: [],

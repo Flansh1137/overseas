@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 const countries = [
   { name: "United States", flag: "https://flagcdn.com/us.svg" },
@@ -10,32 +11,65 @@ const countries = [
 ];
 
 const OfferedCountriesSection = () => {
-  return (
-    <section className="py-20 px-6 bg-white text-center">
-      <h2 className="text-3xl font-bold text-purple-800 mb-10">Countries We Offer</h2>
-      <p>SS Overseas offers a range of services and expertise to help businesses.</p>
+  const marqueeRef = useRef(null);
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        {countries.map((country, i) => (
-          <div
-            key={i}
-            className="flex items-center gap-4 bg-purple-50 p-5 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300"
-          >
-            <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-purple-300 flex-shrink-0">
-              <img
-                src={country.flag}
-                alt={country.name}
-                className="w-full h-full object-cover"
-              />
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const totalWidth = marqueeRef.current.scrollWidth / 2;
+
+      gsap.fromTo(
+        marqueeRef.current,
+        { x: 0 },
+        {
+          x: -totalWidth,
+          duration: 20,
+          ease: "linear",
+          repeat: -1,
+        }
+      );
+    });
+
+    return () => ctx.revert(); // Clean up on unmount
+  }, []);
+
+  // Duplicate countries for seamless scroll
+  const scrollingCountries = [...countries, ...countries];
+
+  return (
+    <section className="py-20 px-6 text-center overflow-hidden flex flex-col items-center justify-center">
+
+<h1 className="font-plein text-4xl w-0   sm:w-3/4 lg:text-5xl font-bold leading-tight mb-6 text-darkPurple ">
+Countries We Offer
+            </h1>
+   
+ 
+      <p className="text-black text-base mb-6 leading-relaxed ">
+        We provide educational guidance for students across these countries and more.
+              </p>
+
+      <div className="relative w-full overflow-hidden">
+        <div
+          ref={marqueeRef}
+          className="flex w-max gap-6"
+        >
+          {scrollingCountries.map((country, i) => (
+            <div
+              key={i}
+              className="flex flex-col items-center bg-purple-50 p-6 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 min-w-[180px]"
+            >
+              <div className="w-20 h-12 overflow-hidden border border-purple-300 rounded-md mb-3 bg-white">
+                <img
+                  src={country.flag}
+                  alt={country.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-semibold text-purple-800">{country.name}</h3>
             </div>
-            <h3 className="text-lg font-semibold text-purple-800">{country.name}</h3>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-      <p className="mt-10 text-lg text-gray-700">
-        We provide educational guidance for students across these countries and more.
-      </p>
     </section>
   );
 };

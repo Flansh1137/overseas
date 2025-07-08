@@ -563,7 +563,7 @@ export default function UniversityDetails() {
             <Button
               size="lg"
               variant="outline"
-              className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+              className="border-black-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
             >
               Book Consultation
             </Button>

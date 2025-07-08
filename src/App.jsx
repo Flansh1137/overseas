@@ -9,6 +9,7 @@ import Universities from "./pages/Universities";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import UniversityDetails from "./pages/UniversitiesDetails";
+import Footer from "./components/Footer";
 const App = () => {
   return (
     <Router>
@@ -22,7 +23,9 @@ const App = () => {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/university/:id" element={<UniversityDetails />} />
+          
         </Routes>
+        <Footer/>
       </div>
     </Router>
   );

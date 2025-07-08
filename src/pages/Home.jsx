@@ -8,43 +8,27 @@ import OfferedCountriesSection from "../components/offeredCountries";
 import TestimonialSection from "../components/TestimonialCard";
 import Programs from "../components/Programs";
 import SubscribeSection from "./SubscribeSection";
+import OurServices from "../components/ServiceCard";
+
 
 
 const Home = () => {
   return (
 
-    
     <main className="bg-white text-gray-800">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-100 via-white to-purple-50">
-       
-<HeroSection/>
-
+      <section className="">
+        <HeroSection />
       </section>
+      <OfferedCountriesSection />
+      <OurServices />
+      <CoreValuesSection />
 
-{/* <VisionMission/> */}
-<CoreValuesSection/>
-
-
-  
-
-      {/* About Section */}
-      <section className="px-6 py-20 bg-gray-50 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-purple-800 mb-6">About SS Overseas</h2>
-          <p className="text-lg mb-6">
-            We are a premier consultancy firm guiding students through studying abroad—from counseling to visa support.
-          </p>
-          <p className="text-lg">
-            We also assist with GRE, TOEFL, IELTS, SAT, and more, offering complete preparation and guidance.
-          </p>
-        </div>
-      </section>
 
       {/* Abroad Programs */}
 
-      <Programs/>
-     
+      <Programs />
+
 
       {/* Story Timeline */}
       <section className="bg-gray-100 py-20 px-6">
@@ -64,19 +48,16 @@ const Home = () => {
       </section>
 
       {/* Countries Offered */}
-      <section>
-  <OfferedCountriesSection/>
-</section>
+   
 
       {/* Testimonials */}
 
 
-      <TestimonialSection/>
+      <TestimonialSection />
 
       {/* Newsletter */}
 
-      <SubscribeSection/>
-     
+
     </main>
   );
 };

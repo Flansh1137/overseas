@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from "react";
+import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import {
   Search,
@@ -77,17 +78,25 @@ export default function Universities() {
   }, [searchTerm, selectedCountry]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-gray-100 to-blue-50 text-gray-800">
+    <div className="  to-blue-50  text-gray-800">
       {/* Hero */}
-      <section className="container mx-auto px-6 py-16 text-center">
-        <h2 className="text-4xl md:text-6xl font-bold mb-4">
-          Explore Top <span className="text-blue-600">Universities</span>{" "}
-          Worldwide
+      <section className="    text-center bg-primary">
+      <div className="max-w-4xl mx-auto px-4 py-20 md:px-8 text-center">
+      <h2 className="text-4xl md:text-6xl  font-bold mb-4">
+        
         </h2>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-          Discover globally renowned institutions that match your goals and
-          budget.
+
+        <h1 className="text-5xl text-white lg:text-6xl font-bold mb-6">
+        Explore Top <span className="text-yellow-300">Universities</span>{" "}
+        Worldwide
+              <br />
+            </h1>
+        <p className="text-lg text-white mb-8 max-w-2xl mx-auto">
+        From personal mentoring to university placement, we provide
+              end-to-end support for your educational journey. Choose from our
+              range of premium services designed to accelerate your success.
         </p>
+          
 
         {/* Search & Filter */}
         <div className="flex flex-col md:flex-row gap-4 justify-center mb-12 max-w-2xl mx-auto">
@@ -116,8 +125,10 @@ export default function Universities() {
           </div>
         </div>
 
+        
+
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto  mb-8">
           {[
             { label: "Partner Universities", value: "500+" },
             { label: "Countries", value: "50+" },
@@ -125,17 +136,18 @@ export default function Universities() {
             { label: "Support", value: "24/7" },
           ].map((stat, idx) => (
             <div key={idx} className="text-center">
-              <div className="text-3xl font-bold text-blue-600">
+              <div className="text-3xl font-bold text-white mb-2">
                 {stat.value}
               </div>
-              <div className="text-sm text-gray-500">{stat.label}</div>
+              <div className="text-sm text-white">{stat.label}</div>
             </div>
           ))}
         </div>
+      </div>
       </section>
 
       {/* University Cards */}
-      <section className="container mx-auto px-6 pb-16">
+      <section className="container mx-auto py-20 ">
         <h3 className="text-2xl font-bold mb-4">Featured Universities</h3>
         <p className="mb-6 text-gray-500">
           {filteredUniversities.length} universit
@@ -152,8 +164,8 @@ export default function Universities() {
                 hoveredCard === uni.id ? "scale-105" : ""
               }`}
             >
-              <div className="relative h-48 bg-gradient-to-r from-blue-100 to-blue-200 flex items-center justify-center">
-                <GraduationCap className="w-16 h-16 text-blue-500" />
+              <div className="relative h-48 bg-lightLavender flex items-center justify-center">
+                <GraduationCap className="w-16 h-16 text-darkPurple" />
                 <div className="absolute top-4 left-4 bg-white/70 px-3 py-1 text-sm rounded">
                   #{uni.ranking} Globally
                 </div>
@@ -198,7 +210,7 @@ export default function Universities() {
                   {uni.students} students enrolled
                 </div>
                 <button
-                  className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center gap-2"
+                  className="w-full bg-primary text-white py-2 rounded hover:bg-darkPurple flex justify-center items-center gap-2"
                   onClick={() => navigate(`/university/${uni.id}`)}
                 >
                   Learn More <ArrowRight className="w-4 h-4" />
@@ -220,82 +232,22 @@ export default function Universities() {
       </section>
 
       {/* CTA */}
-      <section className="bg-blue-600 text-white py-16 text-center">
+      <section className="bg-primary text-white py-16 text-center">
         <h3 className="text-3xl font-bold mb-2">
           Ready to Start Your Journey?
         </h3>
         <p className="text-lg mb-6">Get personalized guidance and support.</p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <button className="bg-white text-blue-600 font-semibold px-6 py-3 rounded hover:bg-gray-100">
+          <button className="bg-white text-primary font-semibold px-6 py-3 rounded hover:bg-gray-100">
             Get Free Consultation
           </button>
-          <button className="border border-white px-6 py-3 rounded hover:bg-white hover:text-blue-600">
+          <button className="border border-white px-6 py-3 rounded hover:bg-white hover:text-primary">
             Browse All Universities
           </button>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-white border-t py-12 text-gray-700">
-        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <div className="flex items-center gap-2 mb-2">
-              <div className="bg-blue-600 p-2 rounded">
-                <GraduationCap className="text-white w-5 h-5" />
-              </div>
-              <span className="font-bold text-lg">UniExplore</span>
-            </div>
-            <p className="text-sm text-gray-500">
-              Helping you find the perfect university for your future.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-2">Services</h4>
-            <ul className="text-sm space-y-1">
-              <li>
-                <a href="#">University Search</a>
-              </li>
-              <li>
-                <a href="#">Application Support</a>
-              </li>
-              <li>
-                <a href="#">Visa Assistance</a>
-              </li>
-              <li>
-                <a href="#">Scholarships</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-2">Destinations</h4>
-            <ul className="text-sm space-y-1">
-              <li>
-                <a href="#">USA</a>
-              </li>
-              <li>
-                <a href="#">UK</a>
-              </li>
-              <li>
-                <a href="#">Canada</a>
-              </li>
-              <li>
-                <a href="#">Australia</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-2">Contact</h4>
-            <ul className="text-sm space-y-1">
-              <li>support@uniexplore.com</li>
-              <li>+1 (555) 123-4567</li>
-              <li>Live Chat 24/7</li>
-            </ul>
-          </div>
-        </div>
-        <div className="text-center text-sm text-gray-500 mt-8">
-          &copy; 2024 UniExplore. All rights reserved.
-        </div>
-      </footer>
+
     </div>
   );
 }
